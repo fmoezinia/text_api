@@ -59,7 +59,7 @@ def reply():
 		
 	elif state == 'purchase':
 		#FIX TO MAKE ALL YESES WITH LOWERCASE ETC
-		if message_body == 'Yes' or 'yes' or 'YES':
+		if message_body == 'Yes' or message_body == 'yes' or message_body =='YES':
 			#buy product
 			print '3'
 			print message_body
