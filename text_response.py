@@ -62,6 +62,7 @@ def reply():
 		if message_body == 'Yes' or 'yes' or 'YES':
 			#buy product
 			print '3'
+			print message_body
 			#whether it went through or not is result
 			result = request_amazon.buy(asin)
 			asin = None
