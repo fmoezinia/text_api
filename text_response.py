@@ -38,6 +38,8 @@ def reply():
 	customer = request.form['From']
 	customer = customer.encode("utf-8", "ignore")
 
+	print '1'
+
 	if state == 'suggestion':
 
 	#print message_body
@@ -46,6 +48,7 @@ def reply():
 		resp = twilio.twiml.Response()
 		resp.message(txtresp)
 		asin = str(item.prod_asin())
+		print '2'
 		state = 'purchase'
 		
 		#this return statement is needed to send response text - and also returns on web app
@@ -58,12 +61,14 @@ def reply():
 		#FIX TO MAKE ALL YESES WITH LOWERCASE ETC
 		if message_body == 'Yes' or 'yes' or 'YES':
 			#buy product
+			print '3'
 			#whether it went through or not is result
 			result = request_amazon.buy(asin)
 			asin = None
 			#MUST RETURN SOMETING?
 			#did all go well?
 			test_sms.send(result,customer)
+			print '5'
 			customer = None
 			result = None
 			state = 'suggestion'
@@ -71,6 +76,7 @@ def reply():
 			return 'hi'
 		else:
 			state = 'suggestion'
+			print '4'
 			result = 'We are sorry that you do not want to purchase this item. Please search for a different product!'
 			test_sms.send(result, customer)
 			customer = None
