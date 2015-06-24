@@ -50,7 +50,7 @@ class Item(object):
 
 
 
-customer_product = Item('uranium')
+customer_product = Item('shirt')
 #customer_product = Item(product)
 
 #product_name = customer_product.prod_item()
