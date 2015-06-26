@@ -10,6 +10,7 @@ from amazon.api import AmazonAPI
 #curl https://api.zinc.io/v0/order -d
 import ssl
 
+#add valid credit card info etc
 
 
 def buy(asin, first_name, surname, address_line1, address_line2, zip_code, city, state, customer, ):
